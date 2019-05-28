@@ -4,6 +4,7 @@
 	//header
 	include "pages/components/header.php"; 
 
+	//content
 	if(isset($_GET['page'])){
 
 		switch($_GET['page']){
@@ -22,6 +23,9 @@
 			case 'product':
 			include "pages/views/single-product.php";
 			break;
+
+			case 'login':
+			include "pages/views/login.php";
 		}
 	}
 	else
