@@ -13,6 +13,15 @@
 			
 			case 'about':
 			include "pages/views/about.php";
+			break;
+
+			case 'shop':
+			include "pages/views/products.php";
+			break;
+
+			case 'product':
+			include "pages/views/single-product.php";
+			break;
 		}
 	}
 	else
