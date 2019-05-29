@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include "config/connection.php";
 	//head
 	include "pages/components/head.php";

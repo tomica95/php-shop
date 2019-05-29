@@ -5,7 +5,7 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="index.html" class="logo">
+				<a href="index.php" class="logo">
 					<img src="images/icons/logo.png" alt="IMG-LOGO">
 				</a>
 
@@ -14,7 +14,7 @@
 					<nav class="menu">
 						<ul class="main_menu">
 							<li>
-								<a href="index.html">Home</a>
+								<a href="index.php">Home</a>
 								
 							</li>
 
@@ -47,9 +47,23 @@
 
 				<!-- Header Icon -->
 				<div class="header-icons">
-					<a href="index.php?page=login" class="header-wrapicon1 dis-block">
-						<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-					</a>
+					<?php
+						
+						if(isset($_SESSION['user'])){
+							echo '<a href="models/auth/logout.php" class="header-wrapicon1 dis-block">
+							<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+						</a>';
+
+						}
+						else
+						{
+							echo '<a href="index.php?page=login" class="header-wrapicon1 dis-block">
+							<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+						</a>';
+						}
+
+					
+					?>
 
 					<span class="linedivide1"></span>
 
@@ -137,7 +151,7 @@
 		<!-- Header Mobile -->
 		<div class="wrap_header_mobile">
 			<!-- Logo moblie -->
-			<a href="index.html" class="logo-mobile">
+			<a href="index.php" class="logo-mobile">
 				<img src="images/icons/logo.png" alt="IMG-LOGO">
 			</a>
 
@@ -274,9 +288,9 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 						<ul class="sub-menu">
-							<li><a href="index.html">Homepage V1</a></li>
+							<li><a href="index.php">Homepage V1</a></li>
 							<li><a href="home-02.html">Homepage V2</a></li>
 							<li><a href="home-03.html">Homepage V3</a></li>
 						</ul>

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once "../../config/connection.php";
     require_once "functions.php";
 
@@ -16,6 +17,7 @@
         if($user)
         {
             echo "ulogovan je";
+            $_SESSION['user'] = $user;
             header('Location:../../index.php');
         }
         else
