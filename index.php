@@ -1,4 +1,5 @@
 <?php
+	include "config/connection.php";
 	//head
 	include "pages/components/head.php";
 	//header
@@ -26,6 +27,7 @@
 
 			case 'login':
 			include "pages/views/login.php";
+			break;
 		}
 	}
 	else
