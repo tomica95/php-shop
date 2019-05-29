@@ -9,16 +9,27 @@ require_once "functions.php";
 
         $password = $_REQUEST['password'];
 
-        $registered = registerUser($username,$password);
+        $conf_password = $_REQUEST['confirm-password'];
 
-        if($registered){
+        if($password==$conf_password)
+        {
+            $registered = registerUser($username,$password);
 
-            echo "uspesno registrovan";
+            if($registered){
+    
+                echo "uspesno registrovan";
+            }
+            else
+            {
+                echo "Pokusajte ponovo";
+            }
         }
         else
         {
-            echo "Pokusajte ponovo";
+            echo "Vas password se ne slaze";
         }
+
+        
     }
 
 ?>
