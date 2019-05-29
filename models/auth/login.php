@@ -16,6 +16,7 @@
         if($user)
         {
             echo "ulogovan je";
+            header('Location:../../index.php');
         }
         else
         {

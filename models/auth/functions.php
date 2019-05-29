@@ -5,7 +5,7 @@
         return executeQuery("SELECT * FROM users");
     }
 
-     function findUser($username,$password){
+    function findUser($username,$password){
 
         global $conn;
 
@@ -15,7 +15,19 @@
 
         return $result->fetch();
 
-        
     }
+
+    function registerUser($username,$password)
+    {
+        global $conn;
+
+        $register = $conn->prepare("INSERT INTO users VALUES('',?,?,?)");
+
+        $inserted = $register->execute([$username,md5($password),"2"]);
+
+        return $inserted;
+
+    }
+
 
     ?>

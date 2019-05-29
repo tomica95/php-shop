@@ -44,7 +44,9 @@
                   </div>
                 </form>
                 <!-- end login form -->
-                <form id="register-form" action="#" method="post" role="form" style="display: none;">
+
+                <!-- register form start -->
+                <form id="register-form" action="models/auth/register.php"; method="POST" role="form" style="display: none;">
                   <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
@@ -65,6 +67,7 @@
                     </div>
                   </div>
                 </form>
+                <!-- register form end -->
               </div>
             </div>
           </div>
