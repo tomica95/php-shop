@@ -5,19 +5,17 @@
         return executeQuery("SELECT * FROM users");
     }
 
-    // function findUser($username,$password){
+     function findUser($username,$password){
 
-    //     global $conn;
+        global $conn;
 
-    //     $query = $conn->prepare("SELECT * FROM users WHERE username= ? AND password= ?");
+        $result = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
 
-    //     $find = $query->execute([$username,md5($password)]);
+        $result->execute([$username,md5($password)]);
 
-    //     $user = $find->fetch();
-
-    //     echo $user;
+        return $result->fetch();
 
         
-    // }
+    }
 
     ?>

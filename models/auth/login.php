@@ -1,13 +1,31 @@
 <?php
+    require_once "../../config/connection.php";
+    require_once "functions.php";
 
 
 
-require_once "functions.php";
 
-echo '<pre>';
-var_dump(getAllUsers());
+    if(isset($_POST['login-submit'])){
 
-echo '</pre>';
+        $username = $_POST['username'];
+
+        $password = $_POST['password'];
+
+        $user = findUser($username,$password);
+
+        if($user)
+        {
+            echo "ulogovan je";
+        }
+        else
+        {
+            echo "pokusajte ponovo";
+        }
+    
+        
+    }
+
+    
 
 
 

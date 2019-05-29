@@ -7,7 +7,6 @@ define("DATABASE", env("DATABASE"));
 define("USERNAME", env("USERNAME"));
 define("PASSWORD", env("PASSWORD"));
 
-echo BASE_URL;
 
 function env($parametar){
     $file = file(BASE_URL . "config/.env");
