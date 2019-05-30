@@ -13,34 +13,20 @@
 				<div class="wrap_menu">
 					<nav class="menu">
 						<ul class="main_menu">
+						<?php 
+
+							require_once "models/menu/menu_functions.php";
+
+							$menu = getMenu();
+
+							foreach($menu as $m):
+
+						?>
 							<li>
-								<a href="index.php">Home</a>
+								<a href="<?=$m->href ?>"><?=$m->name ?></a>
 								
 							</li>
-
-							<li>
-								<a href="product.html">Shop</a>
-							</li>
-
-							<li class="sale-noti">
-								<a href="product.html">Sale</a>
-							</li>
-
-							<li>
-								<a href="cart.html">Features</a>
-							</li>
-
-							<li>
-								<a href="blog.html">Blog</a>
-							</li>
-
-							<li>
-								<a href="about.html">About</a>
-							</li>
-
-							<li>
-								<a href="contact.html">Contact</a>
-							</li>
+							<?php endforeach; ?>
 						</ul>
 					</nav>
 				</div>
