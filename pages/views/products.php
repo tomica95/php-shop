@@ -9,35 +9,32 @@
 						</h4>
 
 						<ul class="p-b-54">
-							<li class="p-t-4">
-								<a href="#" class="s-text13 active1">
+						<li class="p-t-4">
+								<a href="index.php?page=shop" class="s-text13 active1">
 									All
 								</a>
 							</li>
+						<?php 
 
+							require_once "models/categories/category_functions.php";
+
+							$categories = allCategories();
+
+							foreach($categories as $category):
+
+						?>
 							<li class="p-t-4">
-								<a href="#" class="s-text13">
-									Women
+								<a href="#" class="s-text13 active1">
+									<?=$category->category_name ?>
 								</a>
 							</li>
 
-							<li class="p-t-4">
-								<a href="#" class="s-text13">
-									Men
-								</a>
-							</li>
+							<?php 
 
-							<li class="p-t-4">
-								<a href="#" class="s-text13">
-									Kids
-								</a>
-							</li>
+							endforeach;
+							
+							?>
 
-							<li class="p-t-4">
-								<a href="#" class="s-text13">
-									Accesories
-								</a>
-							</li>
 						</ul>
 
 						<!--  -->
