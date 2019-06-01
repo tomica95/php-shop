@@ -1,3 +1,14 @@
+<?php 
+	require_once "models/products/product_functions.php";
+
+	$product_id = $_GET['id'];
+
+	$product = singleProduct($product_id);
+
+	
+
+
+?>
 <div class="container bgwhite p-t-35 p-b-80">
 		<div class="flex-w flex-sb">
 			<div class="w-size13 p-t-30 respon5">
@@ -5,34 +16,26 @@
 					<div class="wrap-slick3-dots"></div>
 
 					<div class="slick3">
+					
 						<div class="item-slick3" data-thumb="images/thumb-item-01.jpg">
 							<div class="wrap-pic-w">
-								<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+								<img src="images/product-detail-01.jpg" alt="">
 							</div>
 						</div>
 
-						<div class="item-slick3" data-thumb="images/thumb-item-02.jpg">
-							<div class="wrap-pic-w">
-								<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
-							</div>
-						</div>
+						
 
-						<div class="item-slick3" data-thumb="images/thumb-item-03.jpg">
-							<div class="wrap-pic-w">
-								<img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="w-size14 p-t-30 respon5">
 				<h4 class="product-detail-name m-text16 p-b-13">
-					Boxy T-Shirt with Roll Sleeve Detail
+					<?=$product->product_name ?>
 				</h4>
 
 				<span class="m-text17">
-					$22
+					$<?=$product->price ?>
 				</span>
 
 				
@@ -42,7 +45,7 @@
 
 				<div class="p-b-45">
 					
-					<span class="s-text8">Categories: Mug, Design</span>
+					<span class="s-text8">Category:<?=$product->category_name?></span>
 				</div>
 
 				<!--  -->
@@ -55,7 +58,7 @@
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
 						<p class="s-text8">
-							Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat
+						<?=$product->description ?>
 						</p>
 					</div>
 				</div>
@@ -69,7 +72,7 @@
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
 						<p class="s-text8">
-							Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat
+						<?=$product->description ?>
 						</p>
 					</div>
 				</div>
