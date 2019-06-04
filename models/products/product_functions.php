@@ -28,5 +28,10 @@
 
     }
 
+    function sortQuery(){
+
+        return "SELECT * FROM products p INNER JOIN pictures i ON p.id=i.product_id ";
+    }
+
 
 ?>

@@ -29,6 +29,10 @@
 			case 'login':
 			include "pages/views/login.php";
 			break;
+
+			case 'admin_panel':
+			include "pages/views/adminpanel.php";
+			break;
 		}
 	}
 	else

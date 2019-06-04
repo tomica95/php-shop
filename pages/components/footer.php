@@ -222,6 +222,8 @@
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 	<script src="js/login-register.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/product-filter.js"></script>
 
 </body>
 </html>

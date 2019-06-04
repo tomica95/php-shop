@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2019 at 01:29 PM
+-- Generation Time: Jun 04, 2019 at 08:00 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -87,7 +87,15 @@ INSERT INTO `pictures` (`id`, `src`, `alt`, `product_id`) VALUES
 (5, 'item-02.jpg', 'dsada', 9),
 (6, 'item-02.jpg', 'dsada', 10),
 (7, 'item-02.jpg', 'dsada', 11),
-(8, 'item-02.jpg', 'dsada', 12);
+(8, 'item-02.jpg', 'dsada', 12),
+(9, 'item-02.jpg', 'dsada', 5),
+(10, 'item-02.jpg', 'dsada', 5),
+(11, 'item-02.jpg', 'dsada', 5),
+(12, 'item-02.jpg', 'dsada', 8),
+(13, 'item-02.jpg', 'dsada', 9),
+(14, 'item-02.jpg', 'dsada', 10),
+(15, 'item-02.jpg', 'dsada', 11),
+(16, 'item-02.jpg', 'dsada', 12);
 
 -- --------------------------------------------------------
 
@@ -221,7 +229,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `products`

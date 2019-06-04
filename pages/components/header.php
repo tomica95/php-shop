@@ -27,6 +27,7 @@
 								
 							</li>
 							<?php endforeach; ?>
+							<li><a href="index.php?page=admin_panel">Admin panel</a></li>
 						</ul>
 					</nav>
 				</div>
