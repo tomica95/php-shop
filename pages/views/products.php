@@ -151,7 +151,7 @@
 					</div>
 
 					<!-- Product -->
-					<div class="row">
+					<div class="row" id="products">
 					<!-- start foreach -->
 					<?php 
 
