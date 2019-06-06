@@ -2,6 +2,8 @@ $(document).ready(function(){
 
     $('#sort').on('change',sort);
 
+    $('#kategorije').on('click','.category',filterByCategory);
+
     function sort(){
 
         let sort = $(this).val();
@@ -24,6 +26,34 @@ $(document).ready(function(){
         })
 
     }
+
+    function filterByCategory(e){
+
+        e.preventDefault();
+
+        let id_category = $(this).data('id');
+
+        $.ajax({
+            url:"models/products/filter-category.php",
+            method:"POST",
+            data:{
+                id:id_category
+            },
+            dataType:'json',
+            success:function(data){
+
+                printProducts(data);
+
+            },
+            error:function(error){
+
+                console.log(error);
+            }
+        })
+
+    }
+
+
 
     function printProducts(data){
         

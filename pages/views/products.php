@@ -8,7 +8,7 @@
 							Categories
 						</h4>
 
-						<ul class="p-b-54">
+						<ul class="p-b-54" id="kategorije">
 						<li class="p-t-4">
 								<a href="index.php?page=shop" class="s-text13 active1">
 									All
@@ -23,8 +23,8 @@
 							foreach($categories as $category):
 
 						?>
-							<li class="p-t-4">
-								<a href="#" class="s-text13 active1">
+							<li class="p-t-4 category" data-id="<?=$category->id?>">
+								<a href="#" class="s-text13 active1" >
 									<?=$category->category_name ?>
 								</a>
 							</li>
