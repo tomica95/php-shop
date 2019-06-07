@@ -36,5 +36,8 @@
         <?php 
         endforeach;
         ?>
-</table>
+</table>    
+        </br>
+
+        <div id="update-form"></div>
 
