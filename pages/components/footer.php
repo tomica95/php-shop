@@ -224,6 +224,7 @@
 	<script src="js/login-register.js"></script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/product-filter.js"></script>
+	<script src="assets/js/user-update.js"></script>
 
 </body>
 </html>

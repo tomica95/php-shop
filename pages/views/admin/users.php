@@ -1,6 +1,6 @@
 <h2>Users</h2>
 
-<table border="1">
+<table border="1" id="users">
     <tr>
     <td>Id:</td>
     <td>Username:</td>
@@ -28,6 +28,9 @@
             <input type="hidden" name="id" value="<?=$user->id?>">
             
             </form>
+        </td>
+        <td>
+            <button class="update" data-id="<?=$user->id?>">Update</button>
         </td>
     </tr>
         <?php 
