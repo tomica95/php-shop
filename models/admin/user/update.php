@@ -12,7 +12,7 @@ $role_id = $_POST['role_id'];
 
 $id = $_POST['id'];
 
-
+try{
 $query = $conn->prepare("UPDATE users SET username=:user,password=:pass,role_id=:role_id WHERE id=:id");
 
 $query->execute([
@@ -21,6 +21,12 @@ $query->execute([
     'role_id'=>$role_id,
     'id'=>$id
 ]);
+
+}
+catch(Exception $e){
+         
+    handle($e->getMessage());
+}
 
 header('Location:../../../index.php?page=admin_panel');
 

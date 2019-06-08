@@ -7,7 +7,7 @@ try {
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
-catch(PDOException $ex){
+catch(PDOPDOException $ex){
     echo $ex->getMessage();
 }
 
@@ -15,4 +15,3 @@ function executeQuery($query){
     global $conn;
     return $conn->query($query)->fetchAll();
 }
-

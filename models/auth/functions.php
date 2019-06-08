@@ -1,19 +1,35 @@
 <?php
 
-    function getAllUsers(){
+    
 
-        return executeQuery("SELECT * FROM users");
+    function getAllUsers(){
+        try{
+            
+            return executeQuery("SELECT * FROM users");
+        }
+        catch(PDOException $e){
+         
+            handle($e->getMessage());
+        }
     }
 
     function findUser($username,$password){
 
         global $conn;
 
-        $result = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+        try{
 
-        $result->execute([$username,md5($password)]);
+            $result = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
 
-        return $result->fetch();
+            $result->execute([$username,md5($password)]);
+
+            return $result->fetch();
+
+        }
+        catch(PDOException $e){
+         
+            handle($e->getMessage());
+        }
 
     }
 
@@ -21,11 +37,19 @@
     {
         global $conn;
 
-        $register = $conn->prepare("INSERT INTO users VALUES('',?,?,?)");
+        try{
 
-        $inserted = $register->execute([$username,md5($password),"2"]);
+            $register = $conn->prepare("INSERT INTO users VALUES('',?,?,?)");
 
-        return $inserted;
+            $inserted = $register->execute([$username,md5($password),"2"]);
+
+            return $inserted;
+
+        }
+        catch(PDOException $e){
+         
+            handle($e->getMessage());
+        }
 
     }
 

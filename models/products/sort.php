@@ -1,5 +1,6 @@
 <?php
 
+
     header("Content-Type:application/json");
 
     if(isset($_POST['sort'])){
@@ -44,6 +45,7 @@
     {
         http_response_code(400); // Bad request
         echo json_encode(["error"=> "You haven't checked sort"]);
+        
     }
 
 

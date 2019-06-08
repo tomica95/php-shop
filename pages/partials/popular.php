@@ -12,6 +12,8 @@
 
 					<?php 
 
+					
+
 						require_once "models/products/product_functions.php";
 
 						$newProducts = getNewProducts();

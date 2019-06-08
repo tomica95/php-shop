@@ -6,6 +6,8 @@ include "../../../config/connection.php";
 
 global $conn;
 
+try{
+
 $id = $_POST['id'];
 
 $query = $conn->prepare("SELECT * FROM users WHERE id= ?");
@@ -18,5 +20,10 @@ $result = $query->fetch();
 
 echo json_encode($result);
 
+}
+catch(Exception $e){
+         
+    handle($e->getMessage());
+}
 
 ?>

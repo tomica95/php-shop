@@ -4,6 +4,8 @@
 
     global $conn;
 
+    try{
+
     $id = $_POST['id'];
 
     if(isset($_POST['delete'])){
@@ -18,6 +20,10 @@
 
         header("Location:../../../index.php?page=admin_panel");
     }
-
+    }
+    catch(Exception $e){
+         
+        handle($e->getMessage());
+    }
 
 ?>

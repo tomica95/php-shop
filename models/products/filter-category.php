@@ -12,13 +12,27 @@
 
         global $conn;
 
-        $product = $conn->prepare("SELECT * FROM products p INNER JOIN pictures i ON p.id=i.product_id INNER JOIN categories c ON p.category_id=c.id WHERE category_id= ?");
+        try{
 
-        $product->execute([
-            $id
-        ]);
+            $product = $conn->prepare("SELECT * FROM products p INNER JOIN pictures i ON p.id=i.product_id INNER JOIN categories c ON p.category_id=c.id WHERE category_id= ?");
 
-        echo json_encode($product->fetchAll());
+            $product->execute([
+                $id
+            ]);
+    
+            echo json_encode($product->fetchAll());
+
+        }
+        catch(PDOPDOException $e){
+
+         
+                handle($e->getMessage());
+           
+
+
+        }
+
+        
     }
     else
     {
