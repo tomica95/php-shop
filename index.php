@@ -35,7 +35,7 @@
 			include "pages/views/login.php";
 			break;
 
-			case 'admin_panel':
+			case 'adminpanel':
 			include "pages/views/adminpanel.php";
 			break;
 		}

@@ -28,7 +28,7 @@ catch(Exception $e){
     handle($e->getMessage());
 }
 
-header('Location:../../../index.php?page=admin_panel');
+header('Location:../../../index.php?page=adminpanel');
 
 
 

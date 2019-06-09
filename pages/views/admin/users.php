@@ -41,7 +41,43 @@
 
         <div id="update-form"></div>
 
+        <div id="register-user">
+        <h1>Register new User </h1></br>
+        
+         <form  method="POST" role="form" action="models/admin/user/register.php">
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username"  tabindex="1" class="form-control" placeholder="Username" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="confirm-password">Confirm password</label>
+                    <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                  </div>
+                  <select name="id_role">
+                    <option>Choose role...</option>
+                    <?php 
 
-        </br>
+                    $roles = allRoles();
 
+                    foreach($roles as $role):
+
+                    ?>
+                    <option value="<?=$role->id?>"><?=$role->name?></option>
+
+                    <?php endforeach; ?>
+                    
+                  </select>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+        </div>
         
