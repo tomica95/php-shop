@@ -17,13 +17,22 @@ $(document).ready(function(){
 
                 html+=`
                     <form method="POST" action="models/admin/user/update.php">
-                       Username: <input type="text" name="username" value="${data.username}"></br>
+                       Username: <input type="text" name="username" value="${data.user.username}"></br>
 
-                        Password: <input type="text" name="password" value="${data.password}"></br>
+                        Password: <input type="text" name="password" value="${data.user.password}"></br>
 
-                        Role_id:<input type="text" value="${data.role_id}" name="role_id"></br>
+                      
+                        <select name="role_id">
+                            <option>Choose role..</option>`;
+                            for(role of data.roles){
 
-                        <input type="hidden" value="${data.id}" name="id">
+                                html+=`<option value="${role.id}">${role.name}</option>`;
+                            }
+
+                        
+                html+=`     </select>
+
+                        <input type="hidden" value="${data.user.id}" name="id">
 
                         <input type="submit" value="Update">
                     </form>

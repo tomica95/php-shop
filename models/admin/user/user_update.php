@@ -16,9 +16,15 @@ $query->execute([
     $id
 ]);
 
-$result = $query->fetch();
+$user = $query->fetch();
 
-echo json_encode($result);
+$roles = executeQuery("SELECT * FROM roles");
+
+$data['user'] = $user;
+
+$data['roles'] = $roles;
+
+echo json_encode($data);
 
 }
 catch(Exception $e){
