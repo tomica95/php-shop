@@ -3,6 +3,8 @@
     <?php 
 
         include "admin/users.php";
+
+        include "admin/categories.php";
     
     ?>
 
