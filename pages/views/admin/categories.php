@@ -17,6 +17,14 @@
     <tr>
         <td><?=$category->id?></td>
         <td><?=$category->category_name?></td>
+        <td>
+            <form method="POST" action="models/admin/category/delete.php">
+                
+            <input type="submit" name="delete" value="Delete">
+
+            <input type="hidden" name="id" value="<?=$category->id?>">
+            </form>
+        </td>
     </tr>
         <?php endforeach;?>
 
