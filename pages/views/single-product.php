@@ -48,6 +48,14 @@
 					<span class="s-text8">Category:<?=$product->category_name?></span>
 				</div>
 
+				<form method="POST" action="models/products/exportToExcel.php">
+
+						<input type="hidden" value="<?=$product->product_id?>" name="id">
+
+						<input type="submit" value="Export to excel">
+
+				</form>
+
 				<!--  -->
 				<div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
 					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
