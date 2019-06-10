@@ -225,6 +225,7 @@
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/product-filter.js"></script>
 	<script src="assets/js/user-update.js"></script>
+	<script src="assets/js/category-update.js"></script>
 
 </body>
 </html>

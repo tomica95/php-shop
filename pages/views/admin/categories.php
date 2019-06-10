@@ -1,5 +1,5 @@
 <h2> Categories </h2>
-
+<div id="categories">
 <table border="1">
     <tr>
         <td>Id</td>
@@ -25,8 +25,14 @@
             <input type="hidden" name="id" value="<?=$category->id?>">
             </form>
         </td>
+        <td>
+            <button class="update-category" data-id="<?=$category->id?>">Update</button>
+        </td>
     </tr>
         <?php endforeach;?>
 
 </table>
 
+    <div id="category-update"></div>
+
+</div>
