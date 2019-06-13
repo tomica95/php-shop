@@ -157,7 +157,8 @@
 
 						require_once "models/products/product_functions.php"; 
 
-						$products = getAllProductsWithPicture();
+						$limit =  isset($_GET['limit'])? $_GET['limit'] : 0;
+                 		$products = getProductsWithPicture($limit);
 
 						foreach($products as $product):
 

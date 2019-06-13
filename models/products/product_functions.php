@@ -64,5 +64,44 @@
         }
     }
 
+    define("PRODUCT_ONPAGE",5);
+
+    function getProductsWithPicture($limit=0)
+    {
+        global $conn;
+        
+        $select = $conn->prepare("SELECT * FROM products p INNER JOIN pictures i ON p.id=i.product_id LIMIT :limit, :offset");
+
+        $limit = ((int) $limit)* PRODUCT_ONPAGE;
+
+        $select->bindParam(":limit",$limit,PDO::PARAM_INT);
+
+        $number = PRODUCT_ONPAGE;
+
+        $select->bindParam(":offset",$number,PDO::PARAM_INT);
+
+        $select->execute();
+
+        $products = $select->fetchAll();
+
+        return $products;
+
+
+    }
+
+    function getNumOfProducts()
+    {
+        executeQueryOneRow("SELECT COUNT(*) as num_of_products FROM products");
+    }
+
+    function getPaginationCount()
+    {
+        $number = getNumOfProducts();
+
+        $numberOfProducts = $number->num_of_products;
+
+        return ceil($numberOfProducts/PRODUCT_ONPAGE);
+    }
+
 
 ?>

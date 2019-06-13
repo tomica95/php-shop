@@ -91,3 +91,7 @@
 13.06.2019 23:21:17	Page:index.php?page=about	Ip adress::1
 13.06.2019 23:21:19	Page:exportToWord.php	Ip adress::1
 13.06.2019 23:21:20	Page:index.php?page=about	Ip adress::1
+13.06.2019 23:27:12	Page:index.php	Ip adress::1
+13.06.2019 23:27:15	Page:index.php?page=adminpanel	Ip adress::1
+13.06.2019 23:27:16	Page:index.php?page=shop	Ip adress::1
+13.06.2019 23:27:18	Page:index.php	Ip adress::1
