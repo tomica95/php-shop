@@ -2,13 +2,15 @@
 
     header("Content-Type: application/json");
 
-    $limit = $_GET['limit'];
+    
 
-    if($limit)
+    if(isset($_GET['limit']))
     {
         require_once "../../config/connection.php";
 
         include "product_functions.php";
+
+        $limit = $_GET['limit'];
 
         $products = getProductsWithPicture($limit);
 

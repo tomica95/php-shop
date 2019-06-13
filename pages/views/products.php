@@ -145,9 +145,7 @@
 							</div>
 						</div>
 
-						<span class="s-text8 p-t-5 p-b-5">
-							Showing 1–12 of 16 results
-						</span>
+						
 					</div>
 
 					<!-- Product -->
@@ -197,7 +195,7 @@
 					</div>
 
 					<!-- Pagination -->
-					<div class="pagination flex-m flex-w p-t-26">
+					<div id="pagination" class="pagination flex-m flex-w p-t-26">
 					<?php
 						$number_of_products = getPaginationCount();
 

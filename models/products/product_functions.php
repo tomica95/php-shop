@@ -64,7 +64,7 @@
         }
     }
 
-    define("PRODUCT_ONPAGE",2);
+    define("PRODUCT_ONPAGE",3);
 
     function getProductsWithPicture($limit=0)
     {
@@ -100,7 +100,7 @@
 
         $numberOfProducts = $number->num;
 
-        return ceil($numberOfProducts/PRODUCT_ONPAGE);
+        return ceil($numberOfProducts /  PRODUCT_ONPAGE);
     }
 
 
