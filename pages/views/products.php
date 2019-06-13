@@ -155,7 +155,7 @@
 					<!-- start foreach -->
 					<?php 
 
-						require_once "models/products/product_functions.php"; 
+						include "models/products/product_functions.php"; 
 
 						$limit =  isset($_GET['limit'])? $_GET['limit'] : 0;
                  		$products = getProductsWithPicture($limit);
@@ -198,8 +198,14 @@
 
 					<!-- Pagination -->
 					<div class="pagination flex-m flex-w p-t-26">
-						<a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
-						<a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
+					<?php
+						$number_of_products = getPaginationCount();
+
+						for($i=0; $i<$number_of_products; $i++):
+					?>
+						<a href="#" class="item-pagination flex-c-m trans-0-4" data-limit="<?=$i ?>"><?=$i+1?></a>
+
+						<?php endfor; ?>
 					</div>
 				</div>
 			</div>

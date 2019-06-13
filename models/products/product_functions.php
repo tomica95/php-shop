@@ -91,14 +91,14 @@
 
     function getNumOfProducts()
     {
-        executeQueryOneRow("SELECT COUNT(*) as num_of_products FROM products");
+        return executeQueryOneRow("SELECT COUNT(*) AS num FROM products");
     }
 
     function getPaginationCount()
     {
         $number = getNumOfProducts();
 
-        $numberOfProducts = $number->num_of_products;
+        $numberOfProducts = $number->num;
 
         return ceil($numberOfProducts/PRODUCT_ONPAGE);
     }
