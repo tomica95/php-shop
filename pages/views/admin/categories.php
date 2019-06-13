@@ -35,4 +35,17 @@
 
     <div id="category-update"></div>
 
+    <div id="instert-category">
+            
+            <h2>Insert category</h2>
+            
+            <form method="POST" action="models/admin/category/insert_category.php">
+                <input type="text" name="cat_name">
+
+                <input type="submit" value="Insert category" name="insert">
+                
+            </form>
+    
+    </div>
+
 </div>
