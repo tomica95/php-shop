@@ -1,0 +1,10 @@
+13.06.2019 21:34:39	index.php?page=adminpanel	::1
+13.06.2019 21:34:41	index.php	::1
+13.06.2019 21:34:42	index.php?page=shop	::1
+13.06.2019 21:34:43	index.php?page=about	::1
+13.06.2019 21:35:36	Page:index.php?page=about	Ip adress:::1
+13.06.2019 21:35:37	Page:index.php	Ip adress:::1
+13.06.2019 21:35:38	Page:index.php?page=shop	Ip adress:::1
+13.06.2019 21:35:39	Page:index.php?page=about	Ip adress:::1
+13.06.2019 21:36:05	Page: index.php	Ip adress: ::1
+13.06.2019 21:36:35	Page:index.php	Ip adress::1
