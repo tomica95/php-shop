@@ -226,6 +226,7 @@
 	<script src="assets/js/product-filter.js"></script>
 	<script src="assets/js/user-update.js"></script>
 	<script src="assets/js/category-update.js"></script>
+	<script src="assets/js/pagination.js"></script>
 
 </body>
 </html>

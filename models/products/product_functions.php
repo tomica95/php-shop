@@ -64,7 +64,7 @@
         }
     }
 
-    define("PRODUCT_ONPAGE",5);
+    define("PRODUCT_ONPAGE",2);
 
     function getProductsWithPicture($limit=0)
     {

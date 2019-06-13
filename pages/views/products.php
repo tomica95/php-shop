@@ -203,7 +203,7 @@
 
 						for($i=0; $i<$number_of_products; $i++):
 					?>
-						<a href="#" class="item-pagination flex-c-m trans-0-4" data-limit="<?=$i ?>"><?=$i+1?></a>
+						<a href="#" class="item-pagination flex-c-m trans-0-4 pag" data-limit="<?=$i ?>"><?=$i+1?></a>
 
 						<?php endfor; ?>
 					</div>
