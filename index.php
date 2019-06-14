@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	//errors
-	require_once "config/errorHandler.php";
+	include "config/errorHandler.php";
 	
 	//connection
 	include "config/connection.php";

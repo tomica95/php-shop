@@ -68,6 +68,7 @@
 
     function getProductsWithPicture($limit=0)
     {
+        try{
         global $conn;
         
         $select = $conn->prepare("SELECT * FROM products p INNER JOIN pictures i ON p.id=i.product_id LIMIT :limit, :offset");
@@ -85,22 +86,40 @@
         $products = $select->fetchAll();
 
         return $products;
+        }
+        catch(PDOException $e){
+         
+            handle($e->getMessage());
+        }
 
 
     }
 
     function getNumOfProducts()
     {
+        try{
         return executeQueryOneRow("SELECT COUNT(*) AS num FROM products");
+        }
+        catch(PDOException $e){
+         
+            handle($e->getMessage());
+        }
     }
 
     function getPaginationCount()
     {
+        try{
         $number = getNumOfProducts();
 
         $numberOfProducts = $number->num;
 
         return ceil($numberOfProducts /  PRODUCT_ONPAGE);
+
+        }
+        catch(PDOException $e){
+         
+            handle($e->getMessage());
+        }
     }
 
 

@@ -9,3 +9,4 @@
 13.06.2019 20:58:27	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'category_name='dsadas'' at line 1
 13.06.2019 20:59:24	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''',category_name='jjj'' at line 1
 13.06.2019 21:00:45	SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''','dsadas'' at line 1
+14.06.2019 16:18:01	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'php-shop.productss' doesn't exist
