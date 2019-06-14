@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2019 at 08:00 PM
+-- Generation Time: Jun 14, 2019 at 08:46 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -25,6 +25,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `author`
+--
+
+CREATE TABLE `author` (
+  `id` int(11) NOT NULL,
+  `name` text COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alt` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `author`
+--
+
+INSERT INTO `author` (`id`, `name`, `description`, `img`, `alt`) VALUES
+(1, 'Toma Selea', 'Tomica tomica', 'https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/cVwAAOSw3qZa0NZf/$_86.JPG', 'autor');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categories`
 --
 
@@ -39,7 +60,7 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `category_name`) VALUES
 (1, 'Farmerke'),
-(2, 'Patike');
+(2, 'Patikeee');
 
 -- --------------------------------------------------------
 
@@ -80,22 +101,11 @@ CREATE TABLE `pictures` (
 --
 
 INSERT INTO `pictures` (`id`, `src`, `alt`, `product_id`) VALUES
-(1, 'item-02.jpg', 'dsada', 5),
-(2, 'item-02.jpg', 'dsada', 6),
-(3, 'item-02.jpg', 'dsada', 7),
-(4, 'item-02.jpg', 'dsada', 8),
-(5, 'item-02.jpg', 'dsada', 9),
-(6, 'item-02.jpg', 'dsada', 10),
-(7, 'item-02.jpg', 'dsada', 11),
-(8, 'item-02.jpg', 'dsada', 12),
-(9, 'item-02.jpg', 'dsada', 5),
-(10, 'item-02.jpg', 'dsada', 5),
-(11, 'item-02.jpg', 'dsada', 5),
-(12, 'item-02.jpg', 'dsada', 8),
-(13, 'item-02.jpg', 'dsada', 9),
-(14, 'item-02.jpg', 'dsada', 10),
-(15, 'item-02.jpg', 'dsada', 11),
-(16, 'item-02.jpg', 'dsada', 12);
+(17, 'item-02.jpg', 'Patike', 12),
+(18, 'item-02.jpg', 'patikee', 13),
+(19, 'item-02.jpg', 'Sandale', 14),
+(21, 'item-02.jpg', 'farmerke', 16),
+(22, 'item-02.jpg', 'bermude', 17);
 
 -- --------------------------------------------------------
 
@@ -117,14 +127,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `price`, `description`, `category_id`, `date`) VALUES
-(5, 'Patike', 123, 'dasdsa', 1, '2019-05-06'),
-(6, 'patike 2', 2222, 'sdadas', 2, '2019-05-01'),
-(7, 'Patike', 123, 'dasdsa', 1, '2019-05-15'),
-(8, 'patike 2', 2222, 'sdadas', 2, '2019-05-23'),
-(9, 'Patike', 123, 'dasdsa', 1, '2019-05-08'),
-(10, 'patike 2', 2222, 'sdadas', 2, '2019-05-02'),
-(11, 'Patike', 123, 'dasdsa', 1, '2019-05-13'),
-(12, 'patike 2', 2222, 'sdadas', 2, '2019-05-13');
+(12, 'Patike', 250, 'Patike za trcanje', 2, '2019-06-11'),
+(13, 'Patike za sneg', 55555, 'patike za sneeeg', 2, '2019-06-27'),
+(14, 'Sandale', 123, 'sandale udobne', 2, '2019-06-18'),
+(16, 'legend', 44, 'farmerkicee', 1, '2019-06-05'),
+(17, 'bermude', 444, 'bermudice', 1, '2019-06-24');
 
 -- --------------------------------------------------------
 
@@ -155,23 +162,31 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `role_id` int(11) NOT NULL
+  `role_id` int(11) NOT NULL,
+  `logged` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `role_id`) VALUES
-(1, 'Admin', 'e3afed0047b08059d0fada10f400c1e5', 1),
-(2, 'jebac', 'jebac', 2),
-(3, 'djoka', '231e9b0944b03a74009be7ac4ce2065c', 1),
-(4, 'Tomica', '4edb8e0bfd41d12be8a988784fd0e63f', 2),
-(5, 'tomica', '231e9b0944b03a74009be7ac4ce2065c', 2);
+INSERT INTO `users` (`id`, `username`, `password`, `role_id`, `logged`) VALUES
+(3, 'mika22', '231e9b0944b03a74009be7ac4ce2065c', 2, 0),
+(4, 'aconi2', '93e608f96cf8bad11676547cccccf565', 2, 0),
+(5, 'toma', 'mika', 2, 0),
+(7, 'dsada', 'cb02253913cae85f3de576ef77050194', 2, 0),
+(8, 'djokaaa', '31a2a8c2e5ed9d071f944433309ae55e', 1, 1),
+(9, 'mitar', 'dd2e8a3db7e1bb979928d9f37366a3c0', 2, 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `author`
+--
+ALTER TABLE `author`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `categories`
@@ -214,10 +229,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `author`
+--
+ALTER TABLE `author`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -229,13 +250,13 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -247,7 +268,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
