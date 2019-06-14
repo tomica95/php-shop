@@ -1,19 +1,6 @@
 <?php 
 
-    
-
-
-    function getAllProductsWithPicture(){
-
-        try{
-
-        return executeQuery("SELECT * FROM products p INNER JOIN pictures i ON p.id=i.product_id ");
-        }
-        catch(PDOException $e){
-         
-            handle($e->getMessage());
-        }
-    }
+   
 
     function getNewProducts(){
 

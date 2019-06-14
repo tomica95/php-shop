@@ -13,3 +13,5 @@
 14.06.2019 16:38:38	SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
 14.06.2019 16:38:52	SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
 14.06.2019 16:39:44	SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+14.06.2019 20:27:17	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'php-shop.category' doesn't exist
+14.06.2019 20:27:40	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'php-shop.category' doesn't exist

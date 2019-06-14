@@ -34,18 +34,26 @@
 </table>
 
     <div id="category-update"></div>
-
+</br>
     <div id="instert-category">
             
             <h2>Insert category</h2>
             
             <form method="POST" action="models/admin/category/insert_category.php">
-                <input type="text" name="cat_name">
+                <!-- <input type="text" name="cat_name"> -->
 
-                <input type="submit" value="Insert category" name="insert">
+                <div class="form-group">
+                    <input type="text" name="cat_name"  tabindex="1" class="form-control" placeholder="Insert category" value="">
+                  </div>
+
+                  <div class="col-sm-6">
+                        <input type="submit" name="insert"  tabindex="3" value="Insert category">
+                    </div>
                 
             </form>
     
     </div>
+
+    </br></br>
 
 </div>

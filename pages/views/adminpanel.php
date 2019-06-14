@@ -7,6 +7,8 @@
         include "admin/users.php";
 
         include "admin/categories.php";
+
+        include "admin/products.php";
     
     ?>
     
