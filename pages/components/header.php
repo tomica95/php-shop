@@ -27,7 +27,9 @@
 								
 							</li>
 							<?php endforeach; ?>
+							<?php if(isset($_SESSION['user'])&&$_SESSION['user']->role_id==1): ?>
 							<li><a href="index.php?page=adminpanel">Admin panel</a></li>
+							<?php endif; ?>
 						</ul>
 					</nav>
 				</div>

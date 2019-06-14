@@ -38,6 +38,9 @@
 			case 'adminpanel':
 			include "pages/views/adminpanel.php";
 			break;
+
+			default:
+        		include "pages/views/404.php";
 		}
 	}
 	else
