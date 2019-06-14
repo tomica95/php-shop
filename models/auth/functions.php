@@ -1,6 +1,6 @@
 <?php
 
-    
+    require_once "../../config/errorHandler.php";
 
     function getAllUsers(){
         try{
@@ -39,9 +39,9 @@
 
         try{
 
-            $register = $conn->prepare("INSERT INTO users VALUES('',?,?,?)");
+            $register = $conn->prepare("INSERT INTO users VALUES('',?,?,?,?)");
 
-            $inserted = $register->execute([$username,md5($password),"2"]);
+            $inserted = $register->execute([$username,md5($password),"2","0"]);
 
             return $inserted;
 

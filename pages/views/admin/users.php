@@ -5,11 +5,16 @@
     <td>Id:</td>
     <td>Username:</td>
     <td>Role:</td>
+    <td>Logged:</td>
     </tr>
 
     <?php
 
         include "models/admin/user/user_functions.php";
+
+        $number = countLoggedUsers();
+
+        $numberOfLogged = $number->numberOfLogged;
 
         $users = allUsers();
 
@@ -20,6 +25,7 @@
         <td><?=$user->id?></td>
         <td><?=$user->username ?></td>
         <td><?=$user->name ?>
+        <td><?=$user->logged ?>
         <td>
             <form method="POST" action="models/admin/user/delete.php">
 
@@ -38,6 +44,10 @@
         ?>
 </table>    
         </br>
+
+        <h4>Number of logged users in this moment is: <?=$numberOfLogged ?> </h4>
+
+        </br></br>
 
         <div id="update-form"></div>
 

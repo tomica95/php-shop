@@ -31,11 +31,34 @@
 
         try{
 
-            $register = $conn->prepare("INSERT INTO users VALUES('',?,?,?)");
+            $register = $conn->prepare("INSERT INTO users VALUES('',?,?,?,?)");
 
-            $inserted = $register->execute([$username,md5($password),$role_id]);
+            $inserted = $register->execute([$username,md5($password),$role_id,"0"]);
 
             return $inserted;
+
+        }
+        catch(PDOException $e){
+         
+            handle($e->getMessage());
+        }
+
+    }
+
+    function countLoggedUsers()
+    {
+        global $conn;
+
+        try
+        {
+            $query = $conn->prepare("SELECT COUNT(*) as numberOfLogged FROM users WHERE logged=?");
+
+            $query->execute([
+                '1'
+            ]);
+
+            return $query->fetch();
+            
 
         }
         catch(PDOException $e){
