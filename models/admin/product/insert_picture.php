@@ -43,7 +43,7 @@ if(isset($_POST['savePicture'])){
                 break;
         }
 
-        $newWidth = 200;
+        $newWidth = 320;
         $newHeight = ($newWidth/$width) * $height; 
         $newPicture = imagecreatetruecolor($newWidth, $newHeight);
         

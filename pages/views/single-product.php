@@ -17,9 +17,9 @@
 
 					<div class="slick3">
 					
-						<div class="item-slick3" data-thumb="images/thumb-item-01.jpg">
+						<div class="item-slick3" data-thumb="<?=$product->small_picture?>">
 							<div class="wrap-pic-w">
-								<img src="images/product-detail-01.jpg" alt="">
+								<img src="<?=$product->big_picture?>" alt="">
 							</div>
 						</div>
 
