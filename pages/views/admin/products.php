@@ -90,9 +90,10 @@
                     <label for="confirm-password">Description</label>
                     <input type="text" name="description"  tabindex="2" class="form-control" placeholder="Description">
                   </div>
+                  Choose category:
                   <select name="category_id">
 
-                    <option>Choose category..</option>
+                    
                     <?php foreach($categories as $category): ?>
                     <option value="<?=$category->id?>"><?=$category->category_name?></option>
                     <?php endforeach; ?>

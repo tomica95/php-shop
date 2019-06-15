@@ -15,6 +15,23 @@
 
         $date = date("Y-m-d H:i:s");
 
+        if(empty($name)){
+            $greske[]="No name";
+        }
+        if(is_int($price)){
+            $greske[]="No price";
+        }
+        if(empty($description)){
+            $greske[]="NO description";
+        }
+        if(count($greske)>0){
+            foreach($greske as $error){
+                echo $error."</br>";
+            }
+        }
+        else
+        {
+
         try{
 
         $isInserted = insertProduct($name,$price,$description,$category_id,$date);
@@ -32,6 +49,7 @@
 
     }
 
+}
 
 
 ?>

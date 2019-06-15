@@ -9,6 +9,17 @@
     {
         $cat_name = $_POST['cat_name'];
 
+        if(empty($cat_name)){
+            $greske[]="NO category";
+        }
+        if(count($greske)>0){
+            foreach($greske as $error){
+                echo $error."</br>";
+            }
+        }
+        else
+        {
+
         try
         {
             $query = $conn->prepare("INSERT INTO categories VALUES ('',?)");
@@ -26,5 +37,5 @@
         header('Location:../../../index.php?page=adminpanel');
     }
 
-
+    }
 ?>
