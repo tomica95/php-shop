@@ -29,7 +29,7 @@
                 <td><?=$product->description?></td>
                 <td><?=$product->category_name?></td>
                 <td><?=$product->date?></td>
-                <td><img src="images/<?=$product->src?>" alt="<?=$product->alt?>" width="100" height="100"></td>
+                <td><img src="<?=$product->small_picture?>" width="100" height="100"></td>
                 <td><form method="POST" action="models/admin/product/delete.php">
                     <input type="hidden" value="<?=$product->product_id?>" name="id">
                     <input type="submit" value="delete" name="delete-product">
@@ -44,17 +44,24 @@
 
                         <form action="models/admin/product/insert_picture.php" method="POST" enctype="multipart/form-data">
 
-                        <p style="color: #9e9e9e;font-size: 12px;font-weight:400;">Profilna slika</p>
+                        <p style="color: #9e9e9e;font-size: 12px;font-weight:400;">Picture of product</p>
+
+                        <select name="product_id">
+                            <option>Choose product</option>
+                            <?php foreach($products as $product): ?>
+                            <option value="<?=$product->product_id?>"><?=$product->product_name?></option>
+                            <?php endforeach; ?>
+                        </select>
 
                         <div class="input-field">
-                          <button type="button" onclick="document.getElementById('profilePhoto').click()" class="btn btn-info">Add profile photo</button>
-                          <span id="profilePhotoValue"></span>
+                          <button type="button" onclick="document.getElementById('productPicture').click()" class="btn btn-info">Add picture to product</button>
+                          <span id="productPictureValue"></span>
 
-                          <input type="file" name="slika" id="profilePhoto" style="display:none;" onchange="document.getElementById('profilePhotoValue').innerHTML=this.value;"/>
+                          <input type="file" name="slika" id="productPicture" style="display:none;" onchange="document.getElementById('productPictureValue').innerHTML=this.value;"/>
                         </div>
 
                         <div class="input-field">
-                            <input type="submit" value="Sačuvaj" name="btnSacuvaj" class="btn btn-success col s12"/>
+                            <input type="submit" value="Save picture" name="savePicture" class="btn btn-success col s12"/>
                         </div>   
                         
                       </form>

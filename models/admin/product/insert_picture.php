@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['btnSacuvaj'])){
+if(isset($_POST['savePicture'])){
     
     require_once "../../../config/connection.php";
     require_once "product_functions.php";
@@ -11,6 +11,7 @@ if(isset($_POST['btnSacuvaj'])){
     $tmp_Location = $_FILES['slika']['tmp_name'];
     $file_type = $_FILES['slika']['type'];
     $file_size = $_FILES['slika']['size'];
+    $product_id=$_POST['product_id'];
 
  
     $errors = [];
@@ -68,7 +69,7 @@ if(isset($_POST['btnSacuvaj'])){
             
 
             try {
-                $isInserted = insert($srcOriginalPicture, $srcNewPicture);
+                $isInserted = insert($srcOriginalPicture, $srcNewPicture,$product_id);
 
                 if($isInserted){
                     

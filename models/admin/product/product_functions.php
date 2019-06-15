@@ -12,11 +12,11 @@
         }
     }
 
-    function insert($srcOriginalPicture, $srcNewPicture){
+    function insert($srcOriginalPicture, $srcNewPicture, $product_id){
         try{
         global $conn;
         $insert = $conn->prepare("INSERT INTO pictures VALUES('', ?, ?,?)");
-        $isInserted = $insert->execute([$srcOriginalPicture, $srcNewPicture,'12']);
+        $isInserted = $insert->execute([$srcOriginalPicture, $srcNewPicture,$product_id]);
         return $isInserted;
         }
         catch(PDOException $e){
