@@ -57,11 +57,11 @@
                           <button type="button" onclick="document.getElementById('productPicture').click()" class="btn btn-info">Add picture to product</button>
                           <span id="productPictureValue"></span>
 
-                          <input type="file" name="slika" id="productPicture" style="display:none;" onchange="document.getElementById('productPictureValue').innerHTML=this.value;"/>
+                          <input type="file" name="pictue" id="productPicture" style="display:none;" onchange="document.getElementById('productPictureValue').innerHTML=this.value;"/>
                         </div>
 
                         <div class="input-field">
-                            <input type="submit" value="Save picture" name="savePicture" class="btn btn-success col s12"/>
+                            <input type="submit" value="Save picture" name="savePicture" class="btn btn-success"/>
                         </div>   
                         
                       </form>

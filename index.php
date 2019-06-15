@@ -1,10 +1,11 @@
 <?php
 	session_start();
-	//errors
-	include "config/errorHandler.php";
 	
 	//connection
 	include "config/connection.php";
+
+	//errors
+	include "config/errorHandler.php";
 	
 	//head
 	include "pages/components/head.php";

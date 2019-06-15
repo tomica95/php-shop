@@ -7,10 +7,10 @@ if(isset($_POST['savePicture'])){
 
   
 
-    $file_name = $_FILES['slika']['name'];
-    $tmp_Location = $_FILES['slika']['tmp_name'];
-    $file_type = $_FILES['slika']['type'];
-    $file_size = $_FILES['slika']['size'];
+    $file_name = $_FILES['pictue']['name'];
+    $tmp_Location = $_FILES['pictue']['tmp_name'];
+    $file_type = $_FILES['pictue']['type'];
+    $file_size = $_FILES['pictue']['size'];
     $product_id=$_POST['product_id'];
 
  
