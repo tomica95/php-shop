@@ -12,11 +12,17 @@
         }
     }
 
-    function insert($putanjaOriginalnaSlika, $putanjaNovaSlika){
+    function insert($srcOriginalPicture, $srcNewPicture){
+        try{
         global $conn;
         $insert = $conn->prepare("INSERT INTO pictures VALUES('', ?, ?,?)");
-        $isInserted = $insert->execute([$putanjaOriginalnaSlika, $putanjaNovaSlika,'12']);
+        $isInserted = $insert->execute([$srcOriginalPicture, $srcNewPicture,'12']);
         return $isInserted;
+        }
+        catch(PDOException $e){
+        
+            handle($e->getMessage());
+        }
     }
 
 ?>

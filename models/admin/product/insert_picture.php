@@ -7,85 +7,86 @@ if(isset($_POST['btnSacuvaj'])){
 
   
 
-    $fajl_naziv = $_FILES['slika']['name'];
-    $fajl_tmpLokacija = $_FILES['slika']['tmp_name'];
-    $fajl_tip = $_FILES['slika']['type'];
-    $fajl_velicina = $_FILES['slika']['size'];
+    $file_name = $_FILES['slika']['name'];
+    $tmp_Location = $_FILES['slika']['tmp_name'];
+    $file_type = $_FILES['slika']['type'];
+    $file_size = $_FILES['slika']['size'];
 
  
-    $greske = [];
+    $errors = [];
 
-    $dozvoljeni_tipovi = ['image/jpg', 'image/jpeg', 'image/png'];
+    $alow_types = ['image/jpg', 'image/jpeg', 'image/png'];
 
-    if(!in_array($fajl_tip, $dozvoljeni_tipovi)){
-        array_push($greske, "Pogresan tip fajla. - Profil slika");
+    if(!in_array($file_type, $alow_types)){
+        array_push($errors, "Wrong type");
     }
-    if($fajl_velicina > 3000000){
-        array_push($greske, "Maksimalna velicina fajla je 3MB. - Profil slika");
+    if($file_size > 3000000){
+        array_push($errors, "To heavy");
     }
 
     
-    if(count($greske) == 0){
+    if(count($errors) == 0){
        
 
-        list($sirina, $visina) = getimagesize($fajl_tmpLokacija);
+        list($width, $height) = getimagesize($tmp_Location);
 
        
         
-        $postojecaSlika = null;
-        switch($fajl_tip){
+        $permanent_picture = null;
+        switch($file_type){
             case 'image/jpeg':
-                $postojecaSlika = imagecreatefromjpeg($fajl_tmpLokacija);
+                $permanent_picture = imagecreatefromjpeg($tmp_Location);
                 break;
             case 'image/png':
-                $postojecaSlika = imagecreatefrompng($fajl_tmpLokacija);
+                $permanent_picture = imagecreatefrompng($tmp_Location);
                 break;
         }
 
-        $novaSirina = 200;
-        $novaVisina = ($novaSirina/$sirina) * $visina; 
-        $novaSlika = imagecreatetruecolor($novaSirina, $novaVisina);
+        $newWidth = 200;
+        $newHeight = ($newWidth/$width) * $height; 
+        $newPicture = imagecreatetruecolor($newWidth, $newHeight);
         
     
-        imagecopyresampled($novaSlika, $postojecaSlika, 0, 0, 0, 0, $novaSirina, $novaVisina, $sirina, $visina);
+        imagecopyresampled($newPicture, $permanent_picture, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
 
         
-        $naziv = time().$fajl_naziv;
-        $putanjaNovaSlika = 'assets/img/small/'.$naziv;
+        $name = time().$file_name;
+        $srcNewPicture = 'assets/img/small/'.$name;
 
-        switch($fajl_tip){
+        switch($file_type){
             case 'image/jpeg':
-                imagejpeg($novaSlika,'../../../'.$putanjaNovaSlika, 75);
+                imagejpeg($newPicture,'../../../'.$srcNewPicture, 75);
                 break;
             case 'image/png':
-                imagepng($novaSlika,'../../../'.$putanjaNovaSlika);
+                imagepng($newPicture,'../../../'.$srcNewPicture);
                 break;
         }
 
-        $putanjaOriginalnaSlika = 'assets/img/'.$naziv;
+        $srcOriginalPicture = 'assets/img/'.$name;
 
-        if(move_uploaded_file($fajl_tmpLokacija, '../../../'.$putanjaOriginalnaSlika)){
-            echo "Slika je upload-ovana na server!";
+        if(move_uploaded_file($tmp_Location, '../../../'.$srcOriginalPicture)){
+            
 
             try {
-                $isInserted = insert($putanjaOriginalnaSlika, $putanjaNovaSlika);
+                $isInserted = insert($srcOriginalPicture, $srcNewPicture);
 
                 if($isInserted){
-                    echo "Putanja do slike je upisana u bazu!";
+                    
                     header("Location: ../../../index.php?page=adminpanel");
                 }
                 
-            } catch(PDOException $ex){
-                echo $ex->getMessage();
+            } catch(PDOException $e){
+        
+                handle($e->getMessage());
             }
         }
 
        
-        imagedestroy($postojecaSlika);
-        imagedestroy($novaSlika);
+        imagedestroy($permanent_picture);
+        imagedestroy($newPicture);
 
     } else {
-        var_dump($greske);
+        var_dump($errors);
     }
 
 }
