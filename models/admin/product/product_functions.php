@@ -12,5 +12,11 @@
         }
     }
 
+    function insert($putanjaOriginalnaSlika, $putanjaNovaSlika){
+        global $conn;
+        $insert = $conn->prepare("INSERT INTO pictures VALUES('', ?, ?,?)");
+        $isInserted = $insert->execute([$putanjaOriginalnaSlika, $putanjaNovaSlika,'12']);
+        return $isInserted;
+    }
 
 ?>

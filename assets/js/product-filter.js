@@ -21,7 +21,7 @@ $(document).ready(function(){
             },
             error:function(error){
 
-                console.log(error);
+                alert(error);
             }
         })
 
@@ -39,7 +39,6 @@ $(document).ready(function(){
             data:{
                 id:id_category
             },
-            dataType:'json',
             success:function(data){
 
                 printProducts(data);

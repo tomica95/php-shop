@@ -42,4 +42,19 @@
     
     </div>
 
-    
+                        <form action="models/admin/product/insert_picture.php" method="POST" enctype="multipart/form-data">
+
+                        <p style="color: #9e9e9e;font-size: 12px;font-weight:400;">Profilna slika</p>
+
+                        <div class="input-field">
+                          <button type="button" onclick="document.getElementById('profilePhoto').click()" class="btn btn-info">Add profile photo</button>
+                          <span id="profilePhotoValue"></span>
+
+                          <input type="file" name="slika" id="profilePhoto" style="display:none;" onchange="document.getElementById('profilePhotoValue').innerHTML=this.value;"/>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="submit" value="Sačuvaj" name="btnSacuvaj" class="btn btn-success col s12"/>
+                        </div>   
+                        
+                      </form>
