@@ -4,11 +4,19 @@
 <!------ Include the above in your HEAD tag ---------->
 <div id="fullscreen_bg" class="fullscreen_bg"/>
 <div id="regContainer" class="container">
+<?php
+
+              if(isset($_GET['Message'])){
+                echo '<h2>'.$_GET['Message'].'</h2>';
+              }
+            
+            ?>
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-login">
           <div class="panel-heading">
             <div class="row">
+            
               <div class="col-xs-6">
                 <a href="#" class="active" id="login-form-link">Login</a>
               </div>
@@ -25,11 +33,11 @@
                 <form id="login-form" action="models/auth/login.php" method="POST" role="form" style="display: block;">
                   <div class="form-group">
                     <label for="username">Email</label>
-                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Email" value="">
+                    <input type="text" name="username" id="username-login" tabindex="1" class="form-control" placeholder="Email" value="">
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                    <input type="password" name="password" id="password-login" tabindex="2" class="form-control" placeholder="Password">
                   </div>
                   <div class="form-group text-center">
                     <input type="checkbox" tabindex="3" class="" name="remember" id="remember">

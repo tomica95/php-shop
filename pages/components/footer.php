@@ -227,6 +227,7 @@
 	<script src="assets/js/user-update.js"></script>
 	<script src="assets/js/category-update.js"></script>
 	<script src="assets/js/pagination.js"></script>
+	<script src="assets/js/register-validation.js"></script>
 
 </body>
 </html>
