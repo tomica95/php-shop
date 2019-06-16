@@ -36,7 +36,7 @@
                 <td><?=$product->date?></td>
                 <td><img src="<?=$product->small_picture?>" width="100" height="100"></td>
                 <td><form method="POST" action="models/admin/product/delete.php">
-                    <input type="hidden" value="<?=$product->product_id?>" name="id">
+                    <input type="hidden" value="<?=$product->id?>" name="id">
                     <input type="submit" value="delete" name="delete-product">
                 </form></td>
             </tr>
