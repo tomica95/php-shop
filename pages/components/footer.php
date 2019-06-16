@@ -196,7 +196,7 @@
 	</script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
-	<script type="text/javascript" src="js/slick-custom.js"></script>
+	<script type="text/javascript" src="assets/js/slick-custom.js"></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
@@ -220,8 +220,8 @@
 	</script>
 
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
-	<script src="js/login-register.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/login-register.js"></script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/product-filter.js"></script>
 	<script src="assets/js/user-update.js"></script>

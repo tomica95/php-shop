@@ -26,7 +26,7 @@
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative">
-								<img src="images/item-07.jpg" alt="<?=$product->alt?>">
+								<img src="assets/images/item-07.jpg" alt="<?=$product->alt?>">
 							</div>
 
 							<div class="block2-txt p-t-20">

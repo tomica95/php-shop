@@ -45,7 +45,7 @@ $(document).ready(function(){
         <!-- Block2 -->
         <div class="block2">
             <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                <img src="images/${product.src}" alt="${product.alt}">
+                <img src="assets/images/${product.src}">
 
                 <div class="block2-overlay trans-0-4">
                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
