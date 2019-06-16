@@ -85,8 +85,8 @@
         
          <form  method="POST" role="form" action="models/admin/user/register.php">
                   <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username"  tabindex="1" class="form-control" placeholder="Username" value="">
+                    <label for="username">Email</label>
+                    <input type="text" name="username"  tabindex="1" class="form-control" placeholder="Email" value="">
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>

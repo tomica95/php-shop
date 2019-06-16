@@ -5,7 +5,7 @@ require_once "functions.php";
 
     if(isset($_POST['register-submit'])){
 
-        $username = $_REQUEST['username'];
+        $email = $_REQUEST['username'];
 
         $password = $_REQUEST['password'];
 
@@ -13,7 +13,8 @@ require_once "functions.php";
 
         if($password==$conf_password)
         {
-            $registered = registerUser($username,$password);
+            
+            $registered = registerUser($email,$password);
 
             if($registered){
     

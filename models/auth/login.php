@@ -18,11 +18,11 @@
     if(isset($_POST['login-submit']))
     {
 
-        $username = $_POST['username'];
+        $email = $_POST['username'];
 
         $password = $_POST['password'];
 
-        $user = findUser($username,$password);
+        $user = findUser($email,$password);
 
         if($user)
         {

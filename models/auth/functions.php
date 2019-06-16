@@ -13,15 +13,15 @@
         }
     }
 
-    function findUser($username,$password){
+    function findUser($email,$password){
 
         global $conn;
 
         try{
 
-            $result = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+            $result = $conn->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
 
-            $result->execute([$username,md5($password)]);
+            $result->execute([$email,md5($password)]);
 
             return $result->fetch();
 
@@ -33,7 +33,7 @@
 
     }
 
-    function registerUser($username,$password)
+    function registerUser($email,$password)
     {
         global $conn;
 
@@ -41,7 +41,7 @@
 
             $register = $conn->prepare("INSERT INTO users VALUES('',?,?,?,?)");
 
-            $inserted = $register->execute([$username,md5($password),"2","0"]);
+            $inserted = $register->execute([$email,md5($password),"2","0"]);
 
             return $inserted;
 

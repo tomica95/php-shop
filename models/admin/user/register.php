@@ -6,7 +6,7 @@
 
     global $conn;
 
-    $username = $_POST['username'];
+    $email = $_POST['username'];
 
     $password = $_POST['password'];
 
@@ -18,7 +18,7 @@
 
         if($password==$password2)
         {
-            $newUser = registerUser($username,$password,$role_id);
+            $newUser = registerUser($email,$password,$role_id);
 
             if($newUser)
             {

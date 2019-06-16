@@ -4,7 +4,7 @@ include "../../../config/connection.php";
 
 global $conn;
 
-$username = $_POST['username'];
+$email = $_POST['username'];
 
 $password = $_POST['password'];
 
@@ -13,10 +13,10 @@ $role_id = $_POST['role_id'];
 $id = $_POST['id'];
 
 try{
-$query = $conn->prepare("UPDATE users SET username=:user,password=:pass,role_id=:role_id WHERE id=:id");
+$query = $conn->prepare("UPDATE users SET email=:email,password=:pass,role_id=:role_id WHERE id=:id");
 
 $query->execute([
-    'user'=>$username,
+    'email'=>$email,
     'pass'=>$password,
     'role_id'=>$role_id,
     'id'=>$id

@@ -25,7 +25,7 @@
 
     }
 
-    function registerUser($username,$password,$role_id)
+    function registerUser($email,$password,$role_id)
     {
         global $conn;
 
@@ -33,7 +33,7 @@
 
             $register = $conn->prepare("INSERT INTO users VALUES('',?,?,?,?)");
 
-            $inserted = $register->execute([$username,md5($password),$role_id,"0"]);
+            $inserted = $register->execute([$email,md5($password),$role_id,"0"]);
 
             return $inserted;
 
