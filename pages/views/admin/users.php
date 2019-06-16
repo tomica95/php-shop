@@ -44,7 +44,8 @@
         ?>
 </table>    
         </br>
-
+        <div id="update-form"></div>
+        </br></br>
         <h4>Number of logged users in this moment is: <?=$numberOfLogged ?> </h4>
 
         </br></br>
@@ -78,7 +79,7 @@
             <?php endforeach; ?>
         </table>
 
-        <div id="update-form"></div>
+        
 
         <div id="register-user">
         <h1>Register new User </h1></br>

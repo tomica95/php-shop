@@ -17,7 +17,7 @@ $(document).ready(function(){
 
                 html+=`
                     <form method="POST" action="models/admin/user/update.php">
-                       Username: <input type="text" name="username" value="${data.user.email}"></br>
+                       Email: <input type="text" name="username" value="${data.user.email}"></br>
 
                         Password: <input type="text" name="password" value="${data.user.password}"></br>
 
