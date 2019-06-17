@@ -92,6 +92,11 @@
 
           echo 'NAKON POPUNE';
           echo "<pre>"; var_dump($pageVisits);
+          foreach($pageVisits as $key => $value)
+          {
+            echo $key;
+            echo $value['visits'];
+          }
 
         }
         

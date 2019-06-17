@@ -5,3 +5,5 @@
 18.06.2019	index.php	::1
 18.06.2019	index.php?page=adminpanel	::1
 18.06.2019	index.php?page=adminpanel	::1
+18.06.2019	index.php?page=adminpanel	::1
+18.06.2019	index.php?page=adminpanel	::1
