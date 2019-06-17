@@ -35,7 +35,7 @@
 								</a>
 
 								<span class="block2-newprice m-text8 p-r-5">
-									<?=$product->price?>
+									$<?=$product->price?>
 								</span>
 							</div>
 						</div>
