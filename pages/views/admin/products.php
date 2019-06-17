@@ -39,6 +39,9 @@
                     <input type="hidden" value="<?=$product->id?>" name="id">
                     <input type="submit" value="Delete" name="delete-product">
                 </form></td>
+                <td>
+                <button class="update-product" data-id="<?=$product->id?>">Update</button>
+                </td>
             </tr>
             <?php endforeach; ?>       
         </table>
@@ -47,7 +50,8 @@
     
     </div>
     </br>
-                        <h2>Insert picture for product</h2>
+      <div id="update"></div></br></br></br>
+                        <h2>Insert product with picture</h2>
                         <form action="models/admin/product/insert_picture.php" method="POST" enctype="multipart/form-data">
 
                         

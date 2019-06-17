@@ -101,6 +101,7 @@
 	<script src="assets/js/category-update.js"></script>
 	<script src="assets/js/pagination.js"></script>
 	<script src="assets/js/register-validation.js"></script>
+	<script src="assets/js/update-product.js"></script>
 
 </body>
 </html>
