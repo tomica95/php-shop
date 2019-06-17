@@ -29,3 +29,71 @@
         </table>
 
         </br>
+
+        <?php
+
+        function allPages(){
+          $datas = logFiles();
+
+            $logs = [];
+            foreach($datas as $data)
+            {
+                $logs[]= explode("\t",$data);
+            }
+
+
+            $pages = [];
+            foreach($logs as $log)
+            {
+              if ($log[1] == 'index.php') {
+                $log[1] = 'index.php?page=index';
+              }
+             $pages[] = explode("=",$log[1]);
+            }
+
+            $allPages = [];
+            foreach($pages as $page) {
+              $allPages[$page[1]]['visits'] = 0;
+            }
+
+            return $allPages;
+          }
+        
+        function allDates(){
+          $datas = logFiles();
+
+          $pageVisits = allPages();
+
+          $logs = [];
+
+          $date = date("d.m.Y");
+
+          echo "<pre>"; var_dump($pageVisits);
+
+          $logs= [];
+
+          foreach ($datas as $data) {
+
+            $logs[] = explode("\t",$data);
+          }
+
+          foreach($logs as $log)
+          {
+            if($log[0]==$date)
+            {
+              
+              $page = explode("=",$log[1]);
+              if (!isset($page[1])) {
+                  $page[1] = 'index';
+              }
+              $pageVisits[$page[1]]['visits']++;
+            }
+          }
+
+          echo 'NAKON POPUNE';
+          echo "<pre>"; var_dump($pageVisits);
+
+        }
+        
+        allDates();
+        ?>
