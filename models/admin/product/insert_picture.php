@@ -4,6 +4,10 @@ if(isset($_POST['savePicture'])){
     
     require_once "../../../config/connection.php";
     require_once "product_functions.php";
+    require_once "insert_product.php";
+
+
+    
 
   
 
@@ -11,7 +15,7 @@ if(isset($_POST['savePicture'])){
     $tmp_Location = $_FILES['pictue']['tmp_name'];
     $file_type = $_FILES['pictue']['type'];
     $file_size = $_FILES['pictue']['size'];
-    $product_id=$_POST['product_id'];
+    
 
  
     $errors = [];
@@ -69,6 +73,8 @@ if(isset($_POST['savePicture'])){
             
 
             try {
+                insert_product();
+                $product_id = $conn->lastInsertId()();
                 $isInserted = insert($srcOriginalPicture, $srcNewPicture,$product_id);
 
                 if($isInserted){

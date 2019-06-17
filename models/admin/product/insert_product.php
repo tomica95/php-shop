@@ -1,9 +1,6 @@
 <?php 
 
-    if(isset($_POST['insert-product']))
-    {
-        require_once "../../../config/connection.php";
-        require_once "product_functions.php";
+    function insert_product(){
 
         $name = $_POST['product-name'];
 
@@ -14,6 +11,8 @@
         $category_id = $_POST['category_id'];
 
         $date = date("Y-m-d H:i:s");
+
+        $greske = [];
 
         if(empty($name)){
             $greske[]="No name";
@@ -36,7 +35,7 @@
 
         $isInserted = insertProduct($name,$price,$description,$category_id,$date);
 
-            if($isInserted)
+            if(!$isInserted)
             {
                 header("Location:../../../index.php?page=adminpanel");
             }
@@ -44,12 +43,9 @@
             catch(PDOException $e){
         
         handle($e->getMessage());
-            }
-        
+            
+    }
+        }
 
     }
-
-}
-
-
 ?>
