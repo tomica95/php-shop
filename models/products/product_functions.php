@@ -6,7 +6,7 @@
 
         try {
 
-            return executeQuery("SELECT * FROM products p INNER JOIN pictures i ON p.id=i.product_id ORDER BY date DESC LIMIT 4 ");
+            return executeQuery("SELECT *,p.id as id FROM products p INNER JOIN pictures i ON p.id=i.product_id ORDER BY date DESC LIMIT 4 ");
 
         }
         catch(PDOException $e){
@@ -108,6 +108,19 @@
             handle($e->getMessage());
         }
     }
+    
+    function mostExpensiveProducts()
+    {
+        try {
 
+            return executeQuery("SELECT * FROM products p INNER JOIN pictures i ON p.id=i.product_id ORDER BY price DESC LIMIT 3 ");
+
+        }
+        catch(PDOException $e){
+         
+            handle($e->getMessage());
+        }
+
+    }
 
 ?>

@@ -74,7 +74,7 @@ if(isset($_POST['savePicture'])){
 
             try {
                 insert_product();
-                $product_id = $conn->lastInsertId()();
+                $product_id = $conn->lastInsertId();
                 $isInserted = insert($srcOriginalPicture, $srcNewPicture,$product_id);
 
                 if($isInserted){

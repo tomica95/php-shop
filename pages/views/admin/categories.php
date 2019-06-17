@@ -47,7 +47,7 @@
                   </div>
 
                   <div class="col-sm-6">
-                        <input type="submit" name="insert"  tabindex="3" value="Insert category">
+                        <input type="submit" name="insert"  tabindex="3" value="Insert category" class="btn btn-success">
                     </div>
                 
             </form>

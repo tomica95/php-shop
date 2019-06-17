@@ -12,6 +12,8 @@
         include "admin/categories.php";
 
         include "admin/products.php";
+
+        include "admin/logs.php";
     
     ?>
 </div> 

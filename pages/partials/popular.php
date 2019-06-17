@@ -26,11 +26,11 @@
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative">
-								<img src="assets/images/item-07.jpg" alt="<?=$product->alt?>">
+								<img src="<?=$product->small_picture?>">
 							</div>
 
 							<div class="block2-txt p-t-20">
-								<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+								<a href="index.php?page=product&id=<?=$product->id?>" class="block2-name dis-block s-text3 p-b-5">
 									<?=$product->product_name?>
 								</a>
 
