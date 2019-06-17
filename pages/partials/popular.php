@@ -2,7 +2,7 @@
 		<div class="container">
 			<div class="sec-title p-b-60">
 				<h3 class="m-text5 t-center">
-					Popular Products
+					New Products
 				</h3>
 			</div>
 
