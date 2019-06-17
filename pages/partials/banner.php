@@ -11,7 +11,7 @@
 					
 					?>
 					<div class="block1 hov-img-zoom pos-relative m-b-30">
-						<img src="<?=$product->small_picture?>">
+						<img src="<?=$product->small_picture?>" width="400" height="230">
 
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
