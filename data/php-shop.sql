@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2019 at 08:46 PM
+-- Generation Time: Jun 17, 2019 at 04:40 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -41,7 +41,7 @@ CREATE TABLE `author` (
 --
 
 INSERT INTO `author` (`id`, `name`, `description`, `img`, `alt`) VALUES
-(1, 'Toma Selea', 'Tomica tomica', 'https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/cVwAAOSw3qZa0NZf/$_86.JPG', 'autor');
+(1, 'Toma Selea', 'I am 24 years old. I was born in Belgrade in 1995. I am fond of computers, motorcycles and cars.\r\nI am trying to lern as much as possible from PHP and object oriented programming. Now I am fifth year of studing in \'Visoka ICT skola\'.\r\nMore about my projects you can find on my github: https://github.com/tomica95 ', 'assets/img/author.jpg', 'autor');
 
 -- --------------------------------------------------------
 
@@ -59,8 +59,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category_name`) VALUES
-(1, 'Farmerke'),
-(2, 'Patikeee');
+(4, 'Cars'),
+(5, 'Motorcycles'),
+(6, 'Trucks');
 
 -- --------------------------------------------------------
 
@@ -91,8 +92,8 @@ INSERT INTO `menu` (`id`, `name`, `href`) VALUES
 
 CREATE TABLE `pictures` (
   `id` int(11) NOT NULL,
-  `src` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `alt` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `big_picture` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `small_picture` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -100,12 +101,11 @@ CREATE TABLE `pictures` (
 -- Dumping data for table `pictures`
 --
 
-INSERT INTO `pictures` (`id`, `src`, `alt`, `product_id`) VALUES
-(17, 'item-02.jpg', 'Patike', 12),
-(18, 'item-02.jpg', 'patikee', 13),
-(19, 'item-02.jpg', 'Sandale', 14),
-(21, 'item-02.jpg', 'farmerke', 16),
-(22, 'item-02.jpg', 'bermude', 17);
+INSERT INTO `pictures` (`id`, `big_picture`, `small_picture`, `product_id`) VALUES
+(1, 'assets/img/15607727772016-Alfa-Romeo-Giulia-V9-1080.jpg', 'assets/img/small/15607727772016-Alfa-Romeo-Giulia-V9-1080.jpg', 1),
+(3, 'assets/img/15607765062017-Alfa-Romeo-Giulia-Quadrifoglio-17-of-26.jpg', 'assets/img/small/15607765062017-Alfa-Romeo-Giulia-Quadrifoglio-17-of-26.jpg', 3),
+(4, 'assets/img/1560777243man.jpg', 'assets/img/small/1560777243man.jpg', 4),
+(5, 'assets/img/1560777324kawa.JPG', 'assets/img/small/1560777324kawa.JPG', 5);
 
 -- --------------------------------------------------------
 
@@ -119,7 +119,7 @@ CREATE TABLE `products` (
   `price` double NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
   `category_id` int(11) NOT NULL,
-  `date` date NOT NULL
+  `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -127,11 +127,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `price`, `description`, `category_id`, `date`) VALUES
-(12, 'Patike', 250, 'Patike za trcanje', 2, '2019-06-11'),
-(13, 'Patike za sneg', 55555, 'patike za sneeeg', 2, '2019-06-27'),
-(14, 'Sandale', 123, 'sandale udobne', 2, '2019-06-18'),
-(16, 'legend', 44, 'farmerkicee', 1, '2019-06-05'),
-(17, 'bermude', 444, 'bermudice', 1, '2019-06-24');
+(1, 'Alfa Romeo', 15000, 'Alfa Romeo Gulia 2019', 4, '2019-06-17 13:59:37'),
+(3, 'Alfa Romeo Giulia', 50000, 'Alfa Romeo Giulia 2017 Quadrifoglio 510HP', 4, '2019-06-17 15:01:46'),
+(4, 'Man', 8000, 'Man Trucks', 6, '2019-06-17 15:14:03'),
+(5, 'Kawasaki', 14000, 'Kawasaki ZX 10 R 2018', 5, '2019-06-17 15:15:24');
 
 -- --------------------------------------------------------
 
@@ -160,7 +159,7 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `role_id` int(11) NOT NULL,
   `logged` int(11) NOT NULL
@@ -170,13 +169,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `role_id`, `logged`) VALUES
-(3, 'mika22', '231e9b0944b03a74009be7ac4ce2065c', 2, 0),
-(4, 'aconi2', '93e608f96cf8bad11676547cccccf565', 2, 0),
-(5, 'toma', 'mika', 2, 0),
-(7, 'dsada', 'cb02253913cae85f3de576ef77050194', 2, 0),
-(8, 'djokaaa', '31a2a8c2e5ed9d071f944433309ae55e', 1, 1),
-(9, 'mitar', 'dd2e8a3db7e1bb979928d9f37366a3c0', 2, 0);
+INSERT INTO `users` (`id`, `email`, `password`, `role_id`, `logged`) VALUES
+(13, 'admin@gmail.com', '16b53d4bfa0718fa735f0c5f9a91dfbc', 1, 0),
+(14, 'admin21', 'a267089812e5a3a5249ded314c8622a4', 1, 0),
+(15, 'korisnik', '2e129db15b6d6db5342ba5d328642262', 2, 0);
 
 --
 -- Indexes for dumped tables
@@ -238,7 +234,7 @@ ALTER TABLE `author`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -250,13 +246,13 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -268,7 +264,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

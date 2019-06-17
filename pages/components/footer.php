@@ -23,7 +23,7 @@
 			<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3 t-center">
 				<h4 class="s-text12 p-b-30">
 				<button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-							Documentation
+							<a href="dokumentacija.pdf">Documentation</a>
 						</button>
 				</h4>
 
