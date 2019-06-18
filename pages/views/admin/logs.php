@@ -48,6 +48,11 @@
               if ($log[1] == 'index.php') {
                 $log[1] = 'index.php?page=index';
               }
+              // ovaj else if je moj
+              else if($log[1] == 'php-shop')
+              {
+                $log[1] = 'index.php?page=index';
+              }
              $pages[] = explode("=",$log[1]);
             }
 
