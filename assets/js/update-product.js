@@ -59,6 +59,13 @@ $(document).ready(function(){
 
                   <input type="hidden" name="id" value="${data.product.product_id}">
 
+                  <div class="input-field">
+                          <button type="button" onclick="document.getElementById('productPicture').click()" class="btn btn-info">Add picture to product</button>
+                          <span id="productPictureValue"></span>
+
+                          <input type="file" name="picture" id="productPicture" style="display:none;" onchange="document.getElementById('productPictureValue').innerHTML=this.value;"/>
+                        </div>
+
                         <div class="input-field">
                             <input type="submit" value="Update product" name="update-product" class="btn btn-success"/>
                         </div> 

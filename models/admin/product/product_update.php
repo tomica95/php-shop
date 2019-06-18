@@ -15,7 +15,7 @@
 
         $id = $_POST['id'];
         
-        $query = $conn->prepare("SELECT *,p.id as id FROM products p INNER JOIN pictures i ON p.id=i.product_id WHERE p.id=?");
+        $query = $conn->prepare("SELECT *,p.id as id FROM products p LEFT JOIN pictures i ON p.id=i.product_id WHERE p.id=?");
         
         $query->execute([
             $id
