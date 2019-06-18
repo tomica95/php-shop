@@ -4,6 +4,8 @@
 	//connection
 	include "config/connection.php";
 
+	writeAccess();
+
 	//errors
 	include "config/errorHandler.php";
 	

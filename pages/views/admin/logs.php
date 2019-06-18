@@ -48,12 +48,25 @@
               if ($log[1] == 'index.php') {
                 $log[1] = 'index.php?page=index';
               }
-              // ovaj else if je moj
+              // zaplet
               else if($log[1] == 'php-shop')
               {
                 $log[1] = 'index.php?page=index';
               }
-             $pages[] = explode("=",$log[1]);
+              else if($log[1]== "logout")
+              {
+                $log[1] = 'index.php?page=logout';
+              }
+              else if($log[1]== "login")
+              {
+                $log[1] = 'index.php?page=login';
+              }
+              else if($log[1]=="")
+              {
+                $log[1] = 'index.php?page='.$log[1];
+              }
+              
+              $pages[] = explode("=",$log[1]);
             }
 
             $allPages = [];
@@ -73,7 +86,7 @@
 
           $date = date("d.m.Y");
 
-          echo "<pre>"; var_dump($pageVisits);
+          // echo "<pre>"; var_dump($pageVisits);
 
           $logs= [];
 
@@ -95,15 +108,37 @@
             }
           }
 
-          echo 'NAKON POPUNE';
-          echo "<pre>"; var_dump($pageVisits);
+          // echo 'NAKON POPUNE';
+          // echo "<pre>"; var_dump($pageVisits);
+
+
+
+
+
+          $numbers = [];
           foreach($pageVisits as $key => $value)
           {
-            echo $key;
-            echo $value['visits'];
+            echo "Broj poseta stranici ".$key." je :";
+            echo $value['visits']."</br>";
+            $numbers[]=$value['visits'];  
+            
+          }
+
+          $sum = array_sum($numbers);
+
+          echo "Ukupan broj poseta stranicama :".$sum;
+
+          echo "</br>";
+        
+          foreach($pageVisits as $key => $value)
+          {
+            echo "Stranica ".$key.":";
+            echo ceil($value['visits']/$sum*100)."%"."</br>";
           }
 
         }
         
         allDates();
         ?>
+
+
